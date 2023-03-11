@@ -42,6 +42,7 @@ export const generateGanttTaskFromGitLab = (issue_info) => {
     duration: getGanttDuration(start_date, due_date, issue_info.created_at),
     progress: getNumberFromDescriptionYaml(issue_info.description, 'progress'),
     assignee: getGitLabAssignee(issue_info),
+    labels: issue_info.labels.toString(),
     description: issue_info.description,
     update: getGanttUpdateDate(issue_info.created_at, issue_info.updated_at),
     parent: parent,

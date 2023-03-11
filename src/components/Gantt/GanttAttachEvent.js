@@ -87,7 +87,7 @@ export const attachEvent = (gantt, props) => {
 
     gantt.ext.quickInfo.setContent({
       header: {
-        title: '<h3>Description</h3>',
+        title: `<h3>Description:${gantt_task.labels}</h3>`,
         // date: ReactDOMServeSr.renderToStaticMarkup().toString(),
       },
       content: ReactDOMServer.renderToStaticMarkup(

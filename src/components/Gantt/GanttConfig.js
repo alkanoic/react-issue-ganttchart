@@ -58,8 +58,20 @@ export const setGanttConfig = (gantt) => {
       },
     },
     { name: 'assignee', label: 'Assignee', align: 'center', width: '130' },
+    {
+      name: 'lables',
+      label: 'labels',
+      align: 'center',
+      width: '120',
+      sort: false,
+      template: (obj) => {
+        return obj.labels;
+      }
+    },
     { name: 'add', label: '', width: '30' },
   ];
+
+  gantt.config.min_grid_column_width = 100;
 
   gantt.plugins({
     quick_info: true,
@@ -95,7 +107,7 @@ export const setGanttConfig = (gantt) => {
     ],
     useKey: "ctrlKey",
     trigger: "wheel",
-    element: function(){
+    element: function () {
       return gantt.$root.querySelector(".gantt_task");
     }
   });
